@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+	<title>Login</title>
+	<link rel="stylesheet" href="../styling.css">
+    </head>
+    <body>
+
+    <?php
+if(isset($message)){
+   foreach($message as $message){
+      echo '<div class="message" onclick="this.remove();">'.$message.'</div>';
+   }
+}
+?>
+
+  <!----------------------Login page ---------------------->
+  <section class="header2" >
+
+     <form action="admin-process-login.php" method="post">
+
+     <div class="form">
+        <h2>ADMIN LOGIN</h2>
+     
+
+     	<?php if (isset($_GET['error'])) { ?>
+     		<p class="error"><?php echo $_GET['error']; ?></p>
+     	<?php } ?>
+
+     <div>
+     	<label for="FullName"></label>
+     	<input class="inp-style" type="text" name="Email" placeholder="Enter Email" required><br>
+  </div>
+
+  <div>
+     	<label for="UserName"></label>
+     	<input class="inp-style" type="text" name="UserName" placeholder="Enter UserName" required><br>
+  </div>
+
+  <div>
+      <label for="Password"></label>
+     	<input class="inp-style" type="password" name="Password" placeholder="Password"><br>
+
+  </div>
+     	<button class="sub1" type="submit">LOGIN</button>
+        <br>
+
+    
+
+     </form>
+ </section>
+
+</body>
+</html>
